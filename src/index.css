@@ -68,3 +68,42 @@ body
   display: inline-block;
   margin-right: 40px;
 }
+.homeBanner{
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.cuadros-container{
+  margin-top: 400px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.box-container{
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.box-container p{
+  width: 350px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 100px;
+  text-align: center;
+  color: rgb(223, 221, 196);
+  text-shadow: 2px 2px #1a1a1a;
+  font-weight: bold;
+  font-size: 22px;
+}
+.img-container{
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+  width: 380px;
+}

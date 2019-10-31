@@ -2,19 +2,20 @@ import React, {Component} from 'react';
 
 import { connect } from 'react-redux';
 
+import { Col, Row } from 'react-bootstrap'
+
 import *as UsuariosActions from '../../actions/UsuariosActions';
 //import '../index.css'
-import Background from '../../imagenes/bannerh.jpg';
 
-var homeBanner = {
-  width: "100%",
-  height: "400px",
-  backgroundImage: "url(" + Background + ")",
-  position: "fixed",
-  top: "0px",
-  left: "0px",
-  zIndex: "-2"
-};
+//Componentes
+import CentralBoxHome from './CentralBoxHome';
+
+//imagenes
+import Background from '../../imagenes/home/bannerh.jpg';
+import homeStart1 from '../../imagenes/home/homeStart1.png';
+import homeStart2 from '../../imagenes/home/homeStart2.png';
+import homeStart3 from '../../imagenes/home/homeStart3.png';
+import homeStart4 from '../../imagenes/home/homeStart4.png';
 
 class Usuarios extends Component{
 constructor(){
@@ -104,15 +105,41 @@ componentDidMount()
       console.log(this.props)
     return (
       <React.Fragment>
-          <div style={ homeBanner }></div>
-          <table className="tabla">
-              <thead>
-                  {/*this.titulo_table()*/}
-              </thead>
-              <tbody>
-                  {this.llenar_tabla()}
-              </tbody>
-          </table>
+          <div className="homeBanner"><img src={Background} alt="Gecko Logo" width="100%"/> </div>
+          <div className="cuadros-container">
+          <Row>
+                <Col lg={12}>
+                    <CentralBoxHome
+                        text="Hoy en día, cualquiera puede estar en la red."
+                        styles="box-container"
+                        url={homeStart1}/>
+                </Col>
+            </Row>
+            <Row>
+                <Col lg={6}>
+                    <CentralBoxHome
+                        text="¿Publicidad, imagen desarrollo
+                        tecnológico y empresarial?
+                        Nosotros te ayudamos"
+                        styles="box-container"
+                        url={homeStart3}/>
+                </Col>
+                <Col lg={6}>
+                    <CentralBoxHome
+                        text="Destaca entre miles de personas "
+                        styles="box-container"
+                        url={homeStart2}/>
+                </Col>
+            </Row>
+            <Row>
+                <Col lg={12}>
+                    <CentralBoxHome
+                        text="Todo lo que necesitas para Ganar en tu emprendimiento."
+                        styles="box-container"
+                        url={homeStart4}/>
+                </Col>
+            </Row>
+          </div>
         </React.Fragment>   
     );
   }
