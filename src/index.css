@@ -2,6 +2,21 @@
 {
   margin: 100px;
 }
+body{
+
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 20%, rgba(207,207,207,1) 51%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(20%, rgba(232,232,232,1)), color-stop(51%, rgba(207,207,207,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 20%, rgba(207,207,207,1) 51%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 20%, rgba(207,207,207,1) 51%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 20%, rgba(207,207,207,1) 51%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 20%, rgba(207,207,207,1) 51%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+  
+}
+.invisible{
+  display: none;
+}
 .tabla
 {
   width: 100%;
@@ -86,7 +101,14 @@ body
   width: 100%;
   display: block;
   position: relative;
+  transition-property: all;
+  transition-duration: 6s;
+  cursor: pointer;
 }
+.box-container:hover{
+  transform: rotatey(350deg);
+}
+
 .box-container p{
   width: 350px;
   position: absolute;
@@ -96,7 +118,7 @@ body
   right: 0;
   top: 100px;
   text-align: center;
-  color: rgb(223, 221, 196);
+  color: rgb(255, 255, 255);
   text-shadow: 2px 2px #1a1a1a;
   font-weight: bold;
   font-size: 22px;
@@ -106,4 +128,28 @@ body
   margin-right: auto;
   z-index: -1;
   width: 380px;
+  transition-property: all;
+  transition-duration: 8s;
+  cursor: pointer;
+}
+.homeText{
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px #1a1a1a;
+  font-size: 60px;
+  position: absolute;
+  top: 270px;
+  text-align: center;
+  animation-name: homeTextAnimation;
+  animation-duration: 14s;
+  
+}
+
+@keyframes homeTextAnimation{
+  0% {left: -400px;
+    color: rgb(255, 198, 42);
+  }
+  100% {
+    left: 100%;
+    color: white;
+  }
 }
